@@ -52,15 +52,19 @@ def callback_function2(message):
 @bot.callback_query_handler(func=lambda call: call.data in ["button7", "button8", "button9", "button10", "button11", "button12"])
 def callback_function3(message):
     keyboard = telebot.types.InlineKeyboardMarkup()
-    button13 = telebot.types.InlineKeyboardButton(text="ПРИМЕР1", callback_data="button13")
-    button14 = telebot.types.InlineKeyboardButton(text="ПРИМЕР2", callback_data="button14")
-    button15 = telebot.types.InlineKeyboardButton(text="ПРИМЕР3", callback_data="button15")
-    button16 = telebot.types.InlineKeyboardButton(text="ПРИМЕР4", callback_data="button16")
-    button17 = telebot.types.InlineKeyboardButton(text="ПРИМЕР5", callback_data="button17")
-    button18 = telebot.types.InlineKeyboardButton(text="ПРИМЕР6", callback_data="button18")
+    button13 = telebot.types.InlineKeyboardButton(text="Спортивные", callback_data="button13")
+    button14 = telebot.types.InlineKeyboardButton(text="Экстремальные", callback_data="button14")
+    button15 = telebot.types.InlineKeyboardButton(text="Игровые и социальные", callback_data="button15")
+    button16 = telebot.types.InlineKeyboardButton(text="Рукоделие", callback_data="button16")
+    button17 = telebot.types.InlineKeyboardButton(text="Технические", callback_data="button17")
+    button18 = telebot.types.InlineKeyboardButton(text="Художественные", callback_data="button18")
+    button19 = telebot.types.InlineKeyboardButton(text="Программирование и книги", callback_data="button19")
+    button20 = telebot.types.InlineKeyboardButton(text="Интеллектуальные", callback_data="button20")
+    button21 = telebot.types.InlineKeyboardButton(text="Окружающая среда", callback_data="button21")
     keyboard.row(button13, button14, button15)
     keyboard.row(button16, button17, button18)
-    bot.send_message(message.from_user.id, "Выберите ваши интересы из списка.", reply_markup=keyboard)
+    keyboard.row(button19, button20, button21)
+    bot.send_message(message.from_user.id, "Выберите ваши увлечения из списка.", reply_markup=keyboard)
 
 #def korpus(message):
     #chat_id = message.chat.id
